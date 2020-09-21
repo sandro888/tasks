@@ -9,6 +9,9 @@
     <style>
         table {
             border-collapse: collapse;
+            margin: 0 auto;
+            width: 80%;
+            margin-top: 30px;
         }
 
         th {
@@ -18,7 +21,7 @@
         table,
         td,
         th {
-            border: 1px solid black;
+            border: 1px solid rgb(80, 79, 79);
             padding: 15px;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center
