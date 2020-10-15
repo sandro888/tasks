@@ -211,7 +211,7 @@
                             <div class="tag_lg red"><a href="#">Hot News</a></div>
                             <div class="feature_article_title">
                                 <h1>
-                                    <a href="{{route('adminshow',["id"=>$data->id])}}" >{{$data->latest('created_at')->first()->title}}</a>
+                                    <a href="{{route('adminshow',["id"=>$data->latest('created_at')->first()->id])}}" >{{$data->latest('created_at')->first()->title}}</a>
                                 </h1>
                             </div>
                             <!-- feature_article_title -->
@@ -269,7 +269,7 @@
                         <div class="feature_article_inner">
                             <div class="tag_lg purple"><a href="#">Top Viewed</a></div>
                             <div class="feature_article_title">
-                                <h1> <a href="{{route('adminshow',["id"=>$data->id])}}" >{{$data->orderBy('created_at', 'desc')->skip(1)->take(1)->get()->first()->title}}</a></h1>
+                                <h1> <a href="{{route('adminshow',["id"=>$data->orderBy('created_at', 'desc')->skip(1)->take(1)->get()->first()->id])}}" >{{$data->orderBy('created_at', 'desc')->skip(1)->take(1)->get()->first()->title}}</a></h1>
                             </div>
                             <!-- feature_article_title -->
     
@@ -311,7 +311,7 @@
                             <div class="tag_lg blue"><a href="#">Top Viewed</a></div>
     
                             <div class="feature_article_title">
-                                <h1> <a href="{{route('adminshow',["id"=>$data->id])}}" >{{$data->orderBy('created_at', 'desc')->skip(2)->take(2)->get()->first()->title}}</a></h1>
+                                <h1> <a href="{{route('adminshow',["id"=>$data->orderBy('created_at', 'desc')->skip(2)->take(2)->get()->first()->id])}}" >{{$data->orderBy('created_at', 'desc')->skip(2)->take(2)->get()->first()->title}}</a></h1>
                             </div>
                             <!-- feature_article_title -->
     
