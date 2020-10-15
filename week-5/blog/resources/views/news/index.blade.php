@@ -29,39 +29,7 @@
  
 </head>
 <body>
-{{-- <div class="container">
 
-    <table class="table table-dark">
-        <tr>
-            <th>#</th>
-            <th>title</th>
-            <th>description</th>
-            <th>action</th>
-       
-    
-        </tr>
-        @foreach ($news as $data)
-    
-        <tr>
-            <td>{{++$loop->index}}</td>
-            <td>{{$data->title}}</td>
-            <td>{{$data->description}}</td>
-            <td>
-                <form action="{{ route('admindelete') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="id" value="{{ $data->id }}">
-                    <button class="btn btn-danger">delete</button>
-                </form>
-            <a href="{{route('adminedit',["id"=>$data->id])}}" class="btn btn-warning">edit</a>
-            <a href="{{route('adminshow',["id"=>$data->id])}}" class="btn btn-success">show</a>
-            </td>
-
-      
-        </tr>
-        @endforeach
-    
-    </table>
-</div> --}}
 <div id="main-wrapper">
     <!-- Page Preloader -->
     <div id="preloader">

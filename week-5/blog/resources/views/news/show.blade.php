@@ -1,33 +1,4 @@
 
-{{-- <div class="container">
-    <div class="card" style="border: 1px solid black;padding:15px;margin-bottom:20px;">
-        <div class="card-title">
-            {{$news->title}}
-        </div>
-        <div class="card-text">
-            {{$news->description}}
-
-        </div>
-
-    </div>
-<form method="POST" action="{{route('storecomment')}}">
-        @csrf
-        <input type="hidden" name="id" value="{{$news->id}}">
-        <textarea name="comments" class="form-control"></textarea>
-        <button class="btn brn-primary">comment</button>
-    </form>
-    @foreach ($comments as $item)
-        
-    <div class="card" style="border: 1px solid black;padding:15px;margin-top:20px;">
-        <div class="card-texts">
-            {{$item->comments}}
-        </div>
-    <small>{{$item->created_at}}</small>
-       
-
-    </div>
-    @endforeach
-</div> --}}
 @extends('layouts.main')
 @section('content')
 
