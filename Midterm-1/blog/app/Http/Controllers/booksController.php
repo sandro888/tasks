@@ -39,7 +39,11 @@ class booksController extends Controller
             "title"=>$request->input("title"),
             "description"=>$request->input("description"),
             "author_name"=>$request->input("author_name"),
+            "Genre_name"=>$request->input("Genre_name"),
 
+        ]);
+        genre::create([
+    		"Genre_name"=>$request->input("Genre_name"),
         ]);
         return redirect()->route("adminindex");
      
@@ -83,7 +87,8 @@ class booksController extends Controller
         books::where("id",$request->input("id"))->update([
     		"title"=>$request->input("title"),
     		"description"=>$request->input("description"),
-    		"author_name"=>$request->input("author_name")
+    		"author_name"=>$request->input("author_name"),
+    		"Genre_name"=>$request->input("Genre_name")
         ]);
         return redirect('/');
     }

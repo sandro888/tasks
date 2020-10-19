@@ -14,6 +14,10 @@
             description -  {{$books->description}}
 
         </div>
+        <div class="card-text">
+            genre -  {{$books->Genre_name}}
+
+        </div>
       
 
     </div>

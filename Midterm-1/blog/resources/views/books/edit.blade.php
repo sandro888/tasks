@@ -38,7 +38,7 @@
             <input required type="text" name="title" placeholder="title" class="form-control"  value="{{$books->title}}"/>
             <label>author_name :</label>
 
-            <input required type="text" name="author_name" placeholder="title" class="form-control"  value="{{$books->author_name}}"/>
+            <input required type="text" name="author_name" placeholder="authot" class="form-control"  value="{{$books->author_name}}"/>
             <label>Stuff about you :</label>
             <textarea required name="description" id="" cols="10" rows="10"  class="form-control" placeholder="desc">{{ $books->description}}</textarea>
           

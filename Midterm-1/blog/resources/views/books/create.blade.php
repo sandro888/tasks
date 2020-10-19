@@ -41,9 +41,10 @@
           
             <label>title :</label>
             <input required name="title" id="" cols="10" rows="10"  class="form-control" placeholder="title" />
+
+            <label>Genre :</label>
+            <input required name="Genre_name" id="" cols="10" rows="10"  class="form-control" placeholder="genre" />
           
-            {{-- <label>Genre :</label>
-            <input required name="title" id="" cols="10" rows="10"  class="form-control" placeholder="title" /> --}}
             <button class="btn brn-primary">submit</button>
         </form>
     </div>

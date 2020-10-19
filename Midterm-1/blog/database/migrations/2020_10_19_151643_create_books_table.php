@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('author_name',225);
             $table->text('description');
             $table->string('title',225);
-            $table->integer('genre_id')->default('2');
+            $table->integer('genre_id')->default('1');
             $table->timestamps();
         });
     }

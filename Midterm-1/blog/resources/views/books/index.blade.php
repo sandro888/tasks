@@ -41,6 +41,7 @@
                 <th>title</th>
                 <th>author</th>
                 <th>description</th>
+                <th>Genre</th>
 
 
             </tr>
@@ -58,10 +59,11 @@
                 </td>
                 <td>{{$data->author_name}}</td>
                 <td>{{$data->description}}</td>
+                <td>{{$data->Genre_name}}</td>
                 <td style="display: flex;padding:5px">
                     <form action="{{ route('admindelete') }}" method="POST">
                         @csrf
-                        <input type="hidden" name="id" value="{{ $data->genre_id }}">
+                        <input type="hidden" name="id" value="{{ $data->id }}">
                         <button class="btn btn-danger">delete</button>
                     </form>
                     <a href="{{route('adminedit',["id"=>$data->id])}}" class="btn btn-warning">edit</a>
