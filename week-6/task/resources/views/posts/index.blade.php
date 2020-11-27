@@ -744,31 +744,40 @@
 
 
                             <div class="context-groups-home_featured row">
-                                {{-- <div class="context-groups-home_featured_left col-sm-5">
+                                {{-- @foreach ($posts->slice(0, 1) as $data) --}}
+                                @foreach ($posts as $data)
+                                @if($loop->last)
+
+                                <div class="context-groups-home_featured_left col-sm-5">
                                     <article class="e-article-teaser-vertical">
                                         <div class="article-thumbnail">
                                             <a
-                                                href="/article/29276-uperuli-da-ugolo-dasasruli-sakartvelom-estonetsats-ver-mougo"><img
-                                                    data-src-vertical-taller="https://popsport.com/sites/default/files/styles/teaser_vertical_taller/public/thumb-overrides/Head%202%20Watermark.JPG?itok=0oXBXb7A"
-                                                    src="https://popsport.com/sites/default/files/styles/teaser_vertical/public/thumb-overrides/Head%202%20Watermark.JPG?itok=aps1OgLP"
-                                                    width="445" height="420" alt="" typeof="foaf:Image" />
+                                            href="{{route('adminshow',["id"=>$data->id])}}">
+                                      
+                                             
+                                                    <img src="{{asset("storage/$data->image")}}"   width="445" height="420"  alt=""/>
+
                                             </a>
                                             <div class="at-cover">
                                             </div>
                                         </div>
                                         <div class="atv-title-wrap">
-                                            <a href="/topic/football" class="e-topic-boxed-link"> ფეხბურთი
+                                            <a href="/topic/football" class="e-topic-boxed-link"> {{DB::table('posts')->latest('created_at')->first()->title}}
                                             </a>
 
                                             <a href="/article/29276-uperuli-da-ugolo-dasasruli-sakartvelom-estonetsats-ver-mougo"
                                                 class="article-link">
-                                                უფერული დასასრული - საქართველომ ესტონეთსაც ვერ მოუგო
+                                                {{DB::table('posts')->latest('created_at')->first()->description}}
                                             </a>
                                         </div>
                                     </article>
 
                                     <div class="js-populate" data-with=".home-featured-banner.b-banner"></div>
-                                </div>  --}}
+                                </div> 
+
+
+                                @endif
+                                @endforeach
                           <div class="context-groups-home_featured_right col-sm-7">
                                     {{-- <div class="featured-article-block">
                                         <article class="e-article-teaser-lg">
@@ -819,8 +828,10 @@
 
                                     </div> --}}
                                    
-                                    @foreach ($posts as $data)
-
+                                    @foreach ($posts->slice(1, 5) as $data)
+                                    @if($loop->last)
+                                        @else
+                                 
                                     <div
                                      class="featured-article-block">
                                         <article class="e-article-teaser-lg">
@@ -844,6 +855,8 @@
                                         </article>
 
                                     </div>
+                                    @endif
+
                                     @endforeach
 
                                     {{-- <div class="featured-article-block">
