@@ -4,8 +4,51 @@
 
 
 <div class="flex-center position-ref full-height">
+    <div class="category_article_wrapper">
+        <div class="row">
+            @foreach ($posts as $data)
+            <div class="col-md-6">
+                <div class="category_article_body">
+                    <div class="top_article_img">
+                        <a href="{{route('adminshow',["id"=>$data->id])}}" ><img class="img-responsive" src="assets/img/tab_top1.jpg"
+                                                                   alt="feature-top">
+                        </a>
+                    </div>
+                    <!-- top_article_img -->
 
+                    <span class="tag pink"><a href="#" target="_self">Tablet</a></span>
 
+                    <div class="category_article_title">
+                        <h2> <a href="{{route('adminshow',["id"=>$data->id])}}" >{{$data->title}}</a></h2>
+                    </div>
+                    <!-- category_article_title -->
+
+                    <div class="article_date"><a href="#">{{$data->created_at}}</a></div>
+                    <!----article_date------>
+                    <!-- article_date -->
+
+                    <div class="category_article_content">
+                        {{$data->description}}
+                    </div>
+                    <!-- category_article_content -->
+
+               
+                    <!-- media_social -->
+
+                </div>
+                <!-- category_article_body -->
+
+            </div>
+            <!-- col-md-6 -->
+
+      
+            <!-- col-md-6 -->
+
+            @endforeach
+        </div>
+        <!-- row -->
+
+    </div>
     <div class="content">
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WDZC3T" height="0" width="0"
                 style="display:none;visibility:hidden"></iframe></noscript>

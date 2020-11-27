@@ -16,7 +16,7 @@ class PostsController extends Controller
         $this->middleware('auth');
         $this->middleware('verified');
     }
-    
+
     public function index()
     {
         return view("posts.index",["posts"=>Posts::get()]);
@@ -59,7 +59,10 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $posts=Posts::where("id",$id)->firstOrFail();
+    	return view("posts.show",["posts"=>$posts]);
+
+
     }
 
     /**

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Auth::routes(['verify' => false]);
-Route::get('/', 'PostsController@index')->name('home');
+Route::get('/', 'PostsController@index')->name('adminindex');
 
 Route::get('/admin',function(){
     return "you araa god";
@@ -26,3 +26,4 @@ Route::get('/admin',function(){
 
 Route::get('/admin/create', 'PostsController@create')->name('admincreate');
 Route::post('/admin/store', 'PostsController@store')->name('adminstore');
+Route::get('/admin/show/{id}','PostsController@show')->name('adminshow');
