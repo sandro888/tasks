@@ -31,14 +31,16 @@
 
 <body >
     <div class="container">
-        <form action="{{ route('adminstore')}}" method="POST">
+        <form action="{{ route('adminstore')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <label>Title:</label>
             <input required type="text" name="title" placeholder="title" class="form-control"/>
           
             <label>Stuff about you :</label>
             <textarea required name="description" id="" cols="10" rows="10"  class="form-control" placeholder="desc"></textarea>
-          
+            
+            <label>Choose image</label>
+            <input type="file" name="image" required class="py-2"/>
             <button class="btn brn-primary">submit</button>
         </form>
     </div>

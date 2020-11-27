@@ -24,6 +24,6 @@ Route::get('/admin',function(){
     return "you araa god";
 })->middleware(['auth','auth.admin']);
 
-Route::get('/admin/create', 'PostsController@create')->name('admincreate');
+Route::get('/admin/create', 'PostsController@create')->name('admincreate')->middleware(['auth','auth.admin']);;
 Route::post('/admin/store', 'PostsController@store')->name('adminstore');
 Route::get('/admin/show/{id}','PostsController@show')->name('adminshow');

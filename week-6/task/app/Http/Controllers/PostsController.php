@@ -41,13 +41,25 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+    
+    
     {
+
+
+        // $posts->title = $request->input('title');
+        // $posts->description = $request->input('description');
+        // $posts->image = $request->file('image');
+        //  if($request->hasFile('image'))
+
         Posts::create([
             "title"=>$request->input("title"),
             "description"=>$request->input("description"),
+            "image"=>$request->file("image")->store('postedpics'),
+            
+            ]);
+            return redirect("/");
+                 
 
-        ]);
-        // return redirect()->route("adminindex");
      
     }
 

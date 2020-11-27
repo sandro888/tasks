@@ -6,45 +6,7 @@
 <div class="flex-center position-ref full-height">
     <div class="category_article_wrapper">
         <div class="row">
-            @foreach ($posts as $data)
-            <div class="col-md-6">
-                <div class="category_article_body">
-                    <div class="top_article_img">
-                        <a href="{{route('adminshow',["id"=>$data->id])}}" ><img class="img-responsive" src="assets/img/tab_top1.jpg"
-                                                                   alt="feature-top">
-                        </a>
-                    </div>
-                    <!-- top_article_img -->
-
-                    <span class="tag pink"><a href="#" target="_self">Tablet</a></span>
-
-                    <div class="category_article_title">
-                        <h2> <a href="{{route('adminshow',["id"=>$data->id])}}" >{{$data->title}}</a></h2>
-                    </div>
-                    <!-- category_article_title -->
-
-                    <div class="article_date"><a href="#">{{$data->created_at}}</a></div>
-                    <!----article_date------>
-                    <!-- article_date -->
-
-                    <div class="category_article_content">
-                        {{$data->description}}
-                    </div>
-                    <!-- category_article_content -->
-
-               
-                    <!-- media_social -->
-
-                </div>
-                <!-- category_article_body -->
-
-            </div>
-            <!-- col-md-6 -->
-
-      
-            <!-- col-md-6 -->
-
-            @endforeach
+           
         </div>
         <!-- row -->
 
@@ -782,7 +744,7 @@
 
 
                             <div class="context-groups-home_featured row">
-                                <div class="context-groups-home_featured_left col-sm-5">
+                                {{-- <div class="context-groups-home_featured_left col-sm-5">
                                     <article class="e-article-teaser-vertical">
                                         <div class="article-thumbnail">
                                             <a
@@ -806,9 +768,9 @@
                                     </article>
 
                                     <div class="js-populate" data-with=".home-featured-banner.b-banner"></div>
-                                </div>
-                                <div class="context-groups-home_featured_right col-sm-7">
-                                    <div class="featured-article-block">
+                                </div>  --}}
+                          <div class="context-groups-home_featured_right col-sm-7">
+                                    {{-- <div class="featured-article-block">
                                         <article class="e-article-teaser-lg">
                                             <div class="article-thumbnail">
                                                 <a
@@ -828,8 +790,8 @@
                                             </a>
                                         </article>
 
-                                    </div>
-                                    <div class="featured-article-block">
+                                    </div> --}}
+                                    {{-- <div class="featured-article-block">
                                         <article class="e-article-teaser-lg">
                                             <div class="article-thumbnail">
                                                 <a
@@ -855,29 +817,36 @@
                                             </a>
                                         </article>
 
-                                    </div>
-                                    <div class="featured-article-block">
+                                    </div> --}}
+                                   
+                                    @foreach ($posts as $data)
+
+                                    <div
+                                     class="featured-article-block">
                                         <article class="e-article-teaser-lg">
                                             <div class="article-thumbnail">
                                                 <a
-                                                    href="/article/29279-mundiali-2022-romel-kalatashi-mokhvda-sakartvelos-nakrebi"><img
-                                                        src="https://static.popsport.com/sites/default/files/styles/teaser_lg/public/2020-11/GEO%20EST%202_0.png?itok=DKI3RKch"
-                                                        width="303" height="195" alt="" typeof="foaf:Image" />
+                                                href="{{route('adminshow',["id"=>$data->id])}}">
+                                                    <img src="{{asset("storage/$data->image")}}" width="303" height="195" alt="" alt="">
+
+                                                
                                                 </a>
                                                 <div class="at-cover">
-                                                    <a href="/topic/football" class="e-topic-boxed-link"> ფეხბურთი
-                                                    </a>
+                                                 
+                                                    <a class="e-topic-boxed-link" href="{{route('adminshow',["id"=>$data->id])}}" >{{$data->title}}</a>
 
                                                 </div>
                                             </div>
-                                            <a href="/article/29279-mundiali-2022-romel-kalatashi-mokhvda-sakartvelos-nakrebi"
+                                            <a  href="{{route('adminshow',["id"=>$data->id])}}"
                                                 class="article-link mt-2">
-                                                მუნდიალი 2022 | რომელ კალათაში მოხვდა საქართველოს ნაკრები
+                                                {{$data->description}}
                                             </a>
                                         </article>
 
                                     </div>
-                                    <div class="featured-article-block">
+                                    @endforeach
+
+                                    {{-- <div class="featured-article-block">
                                         <article class="e-article-teaser-lg">
                                             <div class="article-thumbnail">
                                                 <a
@@ -897,7 +866,7 @@
                                             </a>
                                         </article>
 
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
 
