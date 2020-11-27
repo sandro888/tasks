@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,14 +12,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/home');
-});
+// Route::get('/', function () {
+//     return view('/home');
+// });
 
 Auth::routes();
 Auth::routes(['verify' => false]);
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'PostsController@index')->name('home');
 
 Route::get('/admin',function(){
     return "you araa god";
 })->middleware(['auth','auth.admin']);
+
+Route::get('/admin/create', 'PostsController@create')->name('admincreate');
+Route::post('/admin/store', 'PostsController@store')->name('adminstore');
