@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Posts;
 use App\Comments;
+use Carbon\Carbon;
 class PostsController extends Controller
 {
     /**
@@ -12,10 +13,11 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('verified');
+        // $this->middleware('auth');
+        // $this->middleware('verified');
     }
 
     public function index()

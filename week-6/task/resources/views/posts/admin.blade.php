@@ -66,10 +66,10 @@
 
 
                         </a></td>
-                    <td style="    line-height: 200px;">
+                    <td >
                         <a class="e-topic-boxed-link"
                             href="{{route('adminshow',["id"=>$data->id])}}">{{$data->title}}</a></td>
-                    <td style="    line-height: 200px;"> <a href="{{route('adminshow',["id"=>$data->id])}}" class="article-link mt-2">
+                    <td > <a href="{{route('adminshow',["id"=>$data->id])}}" class="article-link mt-2">
                             {{$data->description}}
                         </a>
                     </td>

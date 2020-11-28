@@ -678,7 +678,7 @@
             <br />
             <div class="entity_comments container">
 
-                <p> 0 - კომენტარი</p>
+                <p>{{count($comments)}} - კომენტარი</p>
 
                 <!--Entity Title -->
                 <form method="POST" action="{{route('storecomment')}}" style="margin-bottom: 50px">
