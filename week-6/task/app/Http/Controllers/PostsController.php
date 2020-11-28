@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
+use App\Comments;
 class PostsController extends Controller
 {
     /**
@@ -77,7 +78,9 @@ class PostsController extends Controller
     public function show($id)
     {
         $posts=Posts::where("id",$id)->firstOrFail();
-    	return view("posts.show",["posts"=>$posts]);
+        $comments=Comments::where("post_id",$id)->get();
+
+    	return view("posts.show",["posts"=>$posts,"comments"=>$comments]);
 
 
     }
@@ -123,5 +126,13 @@ class PostsController extends Controller
         Posts::where("id",$request->input("id"))->delete();
         return redirect()->back();
           
+    }
+    public function storecomment(Request $request)
+    {
+    	Comments::create([
+    		"post_id"=>$request->input("id"),
+    		"comments"=>$request->input("comments"),
+        ]);
+        return redirect()->back();
     }
 }

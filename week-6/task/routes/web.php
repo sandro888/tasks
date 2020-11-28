@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Auth::routes();
-Auth::routes(['verify' => false]);
+Auth::routes(['verify' => true]);
 Route::get('/', 'PostsController@index')->name('adminindex');
 
 // Route::get('/admin',function(){
@@ -32,6 +32,7 @@ Route::get('/admin/show/{id}','PostsController@show')->name('adminshow');
 Route::post('/admin/destroy','PostsController@destroy')->name('admindelete')->middleware(['auth','auth.admin']);;
 
 Route::get('/admin','PostsController@dashboard')->name('admindashboard')->middleware(['auth','auth.admin']);;
+Route::post('/admin/store/comments','PostsController@storecomment')->name('storecomment');
 
 
 Route::post('/admin/update','PostsController@update')->name('adminupdate')->middleware(['auth','auth.admin']);;

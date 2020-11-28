@@ -49,6 +49,7 @@ margin-top: 50px;">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
+                                <a class="btn btn-link" href="{{route('register')}}" >dont have accoount?</a>
                             </div>
                         </div>
 

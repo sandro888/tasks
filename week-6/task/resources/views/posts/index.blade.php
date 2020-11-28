@@ -72,7 +72,8 @@
 
 
                                             <ul class="navbar-nav ml-auto d-flex" style="    display: -webkit-inline-box !important;">
-                                                <!-- Authentication Links -->
+ 
+
                                                 @guest
                                                 <li class="nav-item" style="    margin-right: 20px;">
                                                     <a class="nav-link" 
@@ -159,11 +160,7 @@
 
                                         <nav class="main-menu clearfix">
                                             <ul class="submenu submenu-level-0 list-unstyled">
-                                                <li class="item-video menu-item item-level-0 menu-path-video">
-                                                    <a href="/video" data-prepend-icon="play-circled-filled"
-                                                        class="link-level-0"
-                                                        data-drupal-link-system-path="video">VIDEO</a>
-                                                </li>
+                                              
                                                 <li
                                                     class="menu-item item-level-0 item--expanded menu-path-topic-football">
                                                     <a href="/topic/football" class="link-level-0"
