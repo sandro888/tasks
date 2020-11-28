@@ -764,7 +764,11 @@
                                             </a>
 
                                             <a href="{{route('adminshow',["id"=>$data->id])}}"
-                                                class="article-link">
+                                                class="article-link" style="    max-height: 77px;
+                                                overflow: hidden;
+                                                display: -webkit-box;
+                                                -webkit-line-clamp: 2;
+                                                -webkit-box-orient: vertical;">
                                                 {{DB::table('posts')->latest('created_at')->first()->description}}
                                             </a>
                                         </div>
@@ -777,54 +781,7 @@
                                 @endif
                                 @endforeach
                           <div class="context-groups-home_featured_right col-sm-7">
-                                    {{-- <div class="featured-article-block">
-                                        <article class="e-article-teaser-lg">
-                                            <div class="article-thumbnail">
-                                                <a
-                                                    href="/article/29304-dakarguli-shansis-celicadi-kvaratskhelia-maints-sauketeso-iqo"><img
-                                                        src="https://popsport.com/sites/default/files/styles/teaser_lg/public/2020-11/KVARA.JPG?itok=mYhuEncC"
-                                                        width="303" height="195" alt="" typeof="foaf:Image" />
-                                                </a>
-                                                <div class="at-cover">
-                                                    <a href="/topic/football" class="e-topic-boxed-link"> ფეხბურთი
-                                                    </a>
-
-                                                </div>
-                                            </div>
-                                            <a href="/article/29304-dakarguli-shansis-celicadi-kvaratskhelia-maints-sauketeso-iqo"
-                                                class="article-link mt-2">
-                                                დაკარგული შანსის წელიწადი - კვარაცხელია მაინც საუკეთესო იყო
-                                            </a>
-                                        </article>
-
-                                    </div> --}}
-                                    {{-- <div class="featured-article-block">
-                                        <article class="e-article-teaser-lg">
-                                            <div class="article-thumbnail">
-                                                <a
-                                                    href="/article/29302-istoria-daicera-lanchkhuti-chempionta-ligis-plei-opshia"><img
-                                                        src="https://static.popsport.com/sites/default/files/styles/teaser_lg/public/2020-11/lanch_0.jpg?itok=EXSGsQPz"
-                                                        width="303" height="195" alt="" typeof="foaf:Image" />
-                                                </a>
-                                                <div class="at-cover">
-                                                    <a href="/topic/football" class="e-topic-boxed-link"> ფეხბურთი
-                                                    </a>
-
-                                                    <span class="at-video"><svg role="image"
-                                                            class="icon-play-circled at-video-icon">
-                                                            <use
-                                                                xlink:href="/themes/custom/omedia/images/icons.svg?qk24s1#icon-play-circled">
-                                                            </use>
-                                                        </svg></span>
-                                                </div>
-                                            </div>
-                                            <a href="/article/29302-istoria-daicera-lanchkhuti-chempionta-ligis-plei-opshia"
-                                                class="article-link mt-2">
-                                                ისტორია დაიწერა! ლანჩხუთი ჩემპიონთა ლიგის პლეი ოფშია
-                                            </a>
-                                        </article>
-
-                                    </div> --}}
+                              
                                    
                                     @foreach ($posts->slice(0, 5) as $data)
                                     @if($loop->last)
@@ -847,7 +804,11 @@
                                                 </div>
                                             </div>
                                             <a  href="{{route('adminshow',["id"=>$data->id])}}"
-                                                class="article-link mt-2">
+                                                class="article-link mt-2" style="   
+                                                overflow: hidden;
+                                                display: -webkit-box;
+                                                -webkit-line-clamp: 1;
+                                                -webkit-box-orient: vertical;">
                                                 {{$data->description}}
                                             </a>
                                         </article>
