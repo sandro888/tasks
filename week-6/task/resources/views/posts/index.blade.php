@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="flex-center position-ref full-height">
+<div class="flex-center position-ref full-height" style="    font-family: sans-serif;">
     <div class="category_article_wrapper">
         <div class="row">
            
@@ -26,7 +26,7 @@
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
-                                    <div>
+                                    {{-- <div>
 
 
                                         <nav class="head-top-topics">
@@ -40,7 +40,7 @@
                                             </a>
                                         </nav>
 
-                                    </div>
+                                    </div> --}}
 
 
                                 </div>
@@ -75,7 +75,7 @@
                                                 <!-- Authentication Links -->
                                                 @guest
                                                 <li class="nav-item" style="    margin-right: 20px;">
-                                                    <a class="nav-link"
+                                                    <a class="nav-link" 
                                                         href="{{ route('login') }}">{{ __('შესვლა') }}</a>
                                                 </li>
                                                 @if (Route::has('register'))
@@ -146,7 +146,8 @@
                                 <div class="col-auto d-none d-lg-flex mr-auto">
                                     <a class="oh-logo" href="/">
                                       
-                                        <span>POPSPORT</span>
+                                        <span style="    font-weight: bold;
+                                        font-size: 22px;">POPSPORT</span>
                                     </a>
                                 </div>
                                 <div class="col-auto oh-main-nav d-none d-lg-flex">
@@ -762,10 +763,10 @@
                                             </div>
                                         </div>
                                         <div class="atv-title-wrap">
-                                            <a href="/topic/football" class="e-topic-boxed-link"> {{DB::table('posts')->latest('created_at')->first()->title}}
+                                            <a href="{{route('adminshow',["id"=>$data->id])}}" class="e-topic-boxed-link"> {{DB::table('posts')->latest('created_at')->first()->title}}
                                             </a>
 
-                                            <a href="/article/29276-uperuli-da-ugolo-dasasruli-sakartvelom-estonetsats-ver-mougo"
+                                            <a href="{{route('adminshow',["id"=>$data->id])}}"
                                                 class="article-link">
                                                 {{DB::table('posts')->latest('created_at')->first()->description}}
                                             </a>
@@ -828,7 +829,7 @@
 
                                     </div> --}}
                                    
-                                    @foreach ($posts->slice(1, 5) as $data)
+                                    @foreach ($posts->slice(0, 5) as $data)
                                     @if($loop->last)
                                         @else
                                  

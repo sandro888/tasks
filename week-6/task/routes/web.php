@@ -20,10 +20,19 @@ Auth::routes();
 Auth::routes(['verify' => false]);
 Route::get('/', 'PostsController@index')->name('adminindex');
 
-Route::get('/admin',function(){
-    return "you araa god";
-})->middleware(['auth','auth.admin']);
+// Route::get('/admin',function(){
+//     return view('posts.admin');
+// })->middleware(['auth','auth.admin']);
 
-Route::get('/admin/create', 'PostsController@create')->name('admincreate')->middleware(['auth','auth.admin']);;
+Route::get('/admin/create', 'PostsController@create')->name('admincreate')->middleware(['auth','auth.admin']);
 Route::post('/admin/store', 'PostsController@store')->name('adminstore');
 Route::get('/admin/show/{id}','PostsController@show')->name('adminshow');
+
+
+Route::post('/admin/destroy','PostsController@destroy')->name('admindelete')->middleware(['auth','auth.admin']);;
+
+Route::get('/admin','PostsController@dashboard')->name('admindashboard')->middleware(['auth','auth.admin']);;
+
+
+Route::post('/admin/update','PostsController@update')->name('adminupdate')->middleware(['auth','auth.admin']);;
+Route::get('/admin/edit/{id}','PostsController@edit')->name('adminedit')->middleware(['auth','auth.admin']);;

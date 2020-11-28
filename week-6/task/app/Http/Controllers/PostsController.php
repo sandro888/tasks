@@ -22,6 +22,11 @@ class PostsController extends Controller
         return view("posts.index",["posts"=>Posts::get()]);
 
     }
+    public function dashboard()
+    {
+        return view("posts.admin",["posts"=>Posts::get()]);
+
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -85,7 +90,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $posts=Posts::where("id",$id)->firstOrFail();
+    	return view("posts.edit",["posts"=>$posts]);
     }
 
     /**
@@ -95,9 +101,15 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        Posts::where("id",$request->input("id"))->update([
+    		"title"=>$request->input("title"),
+            "description"=>$request->input("description"),
+            "image"=>$request->file("image")->store('postedpics'),
+
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -106,8 +118,10 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        Posts::where("id",$request->input("id"))->delete();
+        return redirect()->back();
+          
     }
 }

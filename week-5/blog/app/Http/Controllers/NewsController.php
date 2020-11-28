@@ -84,7 +84,7 @@ class NewsController extends Controller
     		"title"=>$request->input("title"),
     		"description"=>$request->input("description")
         ]);
-        return redirect('/');
+        return redirect('/admin');
     }
 
     /**
