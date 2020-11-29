@@ -39,7 +39,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e74e0f">
     <meta name="theme-color" content="#ffffff">
     <link rel="shortcut icon" href="/favicon.ico?v=QEMNQY32MA">
@@ -64,7 +64,7 @@
     <meta name="HandheldFriendly" content="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta property="fb:pages" content="1159313984168136" />
-    <script type="application/ld+json">
+    {{-- <script type="application/ld+json">
         {
                     "@context": "https://schema.org",
                     "@graph": [{
@@ -92,7 +92,7 @@
                         }
                     }]
                 }
-    </script>
+    </script> --}}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="alternate" hreflang="ka" href="https://popsport.com/home" />
     <link rel="revision" href="/home" />
@@ -106,17 +106,17 @@
         media="all" />
 
 
-    <script>
+    {{-- <script>
         var omedia = {
                     env: 'und',
                     lang: 'ka',
                     locale: 'ka_GE',
                     onUpdate: []
                 };
-    </script>
+    </script> --}}
 
     <!-- Facebook Pixel Code -->
-    <script>
+    {{-- <script>
         ! function(f, b, e, v, n, t, s) {
                     if (f.fbq) return;
                     n = f.fbq = function() {
@@ -137,30 +137,15 @@
                     'https://connect.facebook.net/en_US/fbevents.js');
                 fbq('init', '1722393127779737');
                 fbq('track', 'PageView');
-    </script>
-    <noscript>
+    </script> --}}
+    {{-- <noscript>
         <img height="1" width="1" src="https://www.facebook.com/tr?id=1722393127779737&ev=PageView&noscript=1" />
-    </noscript>
+    </noscript> --}}
     <!-- End Facebook Pixel Code -->
 
 
-    <script type="text/javascript" src="//port80ge.adocean.pl/files/js/ado.js"></script>
-    <script type="text/javascript">
-        /* (c)AdOcean 2003-2019 */
-                if (typeof ado !== "object") {
-                    ado = {};
-                    ado.config = ado.preview = ado.placement = ado.master = ado.slave = function() {};
-                }
-                ado.config({
-                    mode: "new",
-                    xml: false,
-                    consent: true,
-                    characterEncoding: true
-                });
-                ado.preview({
-                    enabled: true
-                });
-    </script>
+    {{-- <script type="text/javascript" src="//port80ge.adocean.pl/files/js/ado.js"></script> --}}
+      
 </head>
 <body>
     <div id="app">
@@ -188,6 +173,19 @@
         {{-- <main class="py-4"> --}}
             @yield('content')
         {{-- </main> --}}
+     
     </div>
+    
+    
+{{--     
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/toggle.js"></script> --}}
 </body>
 </html>

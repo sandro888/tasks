@@ -315,7 +315,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-12 oh-mobile-nav d-lg-none">
                                         <a class="oh-logo" href="/"><img
-                                                src="/themes/custom/omedia/images/logo-popsport-new.svg"
+                                                src=""
                                                 data-dark-src="/themes/custom/omedia/images/logo-popsport-new-dark.svg"
                                                 alt="popsport"></a>
                                         <div class="ohm-items">
@@ -339,7 +339,7 @@
                                     </div>
                                     <div class="col-auto d-none d-lg-flex mr-auto">
                                         <a class="oh-logo" href="/"><img
-                                                src="/themes/custom/omedia/images/logo-popsport-new.svg"
+                                                src=""
                                                 data-dark-src="/themes/custom/omedia/images/logo-popsport-new-dark.svg"
                                                 alt="popsport"></a>
                                     </div>
@@ -2190,7 +2190,7 @@
                                 <div class="of-brand float-lg-left">
                                     <div class="of-logo-wrap float-lg-left">
                                         <a href="/" target="_blank"><img class="of-logo"
-                                                src="/themes/custom/omedia/images/logo-popsport-new.svg"
+                                                src=""
                                                 alt="popsport"></a>
                                     </div>
                                     <div class="of-text-wrap float-lg-left">

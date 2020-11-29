@@ -147,9 +147,10 @@
                                 <div class="col-auto d-none d-lg-flex mr-auto">
                                     <a class="oh-logo" href="/">
                                       
-                                        <span style="    font-weight: bold;
-                                        font-size: 22px;">POPSPORT</span>
+                                        <img class="of-logo"
+                                        src="logo-popsport-new.svg" alt="popsport">
                                     </a>
+                                   
                                 </div>
                                 <div class="col-auto oh-main-nav d-none d-lg-flex">
                                     <nav role="navigation" aria-labelledby="-menu">
@@ -753,7 +754,7 @@
                                             href="{{route('adminshow',["id"=>$data->id])}}">
                                       
                                              
-                                                    <img src="{{asset("storage/$data->image")}}"   width="445" height="420"  alt=""/>
+                                                    <img src="{{asset("storage/$data->image")}}"   width="445" height="505"  alt=""/>
 
                                             </a>
                                             <div class="at-cover">
@@ -875,17 +876,23 @@
 
                                 <div class="ta-title mt-4">
                                     <div class="ta-title-inner">
-                                        <h2 class="ta-title-main">ტოპ-5</h2>
-                                        <a class="ta-switch active" data-om="tab" href="#top-day">დღის</a>
-                                        <a class="ta-switch" data-om="tab" href="#top-week">კვირის</a>
+                                        <h2 id="yles" class="ta-title-main">ტოპ-5</h2>
+                                        <button class="daily-btn ta-switch active" type="button" style="    border: none;
+                                        padding-bottom: 7px;                                        outline:none;
+
+                                        cursor: pointer;">დღის</button>
+                                        <button class="weekly-btn ta-switch" type="button" style="    border: none;
+                                        padding-bottom: 7px;
+                                        outline:none;
+                                        cursor: pointer;">კვირის</button>
                                     </div>
                                 </div>
                                 <div class="om-tabs">
+                                    <ul class="list-article-teaser-numbered list-unstyled">
                                     @foreach($posts as $data)
 
-                                    <ul class="list-article-teaser-numbered list-unstyled">
                                     @if($data->created_at >  Carbon\Carbon::today())
-                                        <li class="e-article-teaser-numbered" data-nid="29286"
+                                        <li class="daily-news e-article-teaser-numbered" data-nid="29286"
                                             data-url="https://popsport.com/article/29286-bichebo-sirtskhvilia-tavs-mikhedet-ra-tskhadadze-grigalavas-da-kverkvelias">
                                             <div class="article-thumbnail">
                                            
@@ -913,20 +920,48 @@
                                         </li>
                                         
                                         @else
-                                    </ul>
-                                    {{-- <p>pitalo</p> --}}
+                                        <li style="display: none"  class="weekly-news e-article-teaser-numbered" data-nid="29286">
+                                           
+                                            <div class="article-thumbnail">
+                                           
+                                                <a
+                                                href="{{route('adminshow',["id"=>$data->id])}}">
+                                                    <img src="{{asset("storage/$data->image")}}" width="207" height="135" alt="Thumbnail"/>
 
-                                    @endif
-                                     
-                                    @endforeach
-                                    <div class="om-tab active" id="top-day">
+                                                
+                                                </a>
+                                                <div class="at-cover">
+
+                                                </div>
+                                            </div>
+
+                                            <span class="atn-info">
+                                                <span class="atn-number"></span>
+                                                <a href="{{route('adminshow',["id"=>$data->id])}}" 
+                                                    class="article-link">
+                                                    <span>&#039;{{$data->title}}</span>
+
+                                                </a>
+                                                <time class="om-date" datetime="2020-11-19T13:40:50+0400">19 ნოე
+                                                    2020 / 13:40</time>
+                                            </span>
+                                   
+                                        </li>
+
+                                        
+                                        
+                                        @endif
+                                        
+                                        @endforeach
+                                    </ul>
+                                    {{-- <div class="om-tab active" id="top-day">
                                        
-                                    </div>
+                                    </div> --}}
 
 
 {{-- /////// --}}
 
-                                    <div class="om-tab" id="top-week">
+                                    {{-- <div class="om-tab" id="top-week">
                                         <ul class="list-article-teaser-numbered list-unstyled">
                                             <li class="e-article-teaser-numbered" data-nid="29183"
                                                 data-url="https://popsport.com/article/29183-isini-biblias-cvaven-mkhars-ver-davucher-ratom-ar-daichoka-vunipolam">
@@ -1070,7 +1105,7 @@
                                                 </span>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </section>
                         </div>
@@ -1102,182 +1137,43 @@
                                         </header>
 
 
-
-
+                                        @foreach ($posts->slice(0, 6) as $data)
                                         <div class="views-row">
-                                            <article class="e-article-teaser-sm d-flex" data-nid="29279"
-                                                data-url="https://popsport.com/article/29279-mundiali-2022-romel-kalatashi-mokhvda-sakartvelos-nakrebi">
+                                            <article class="e-article-teaser-sm d-flex" data-nid="29625"
+                                                data-url="https://popsport.com/article/29625-preview-sakartvelos-udzlieresi-trio-hqavs-pinets-liderebi-aklia">
                                                 <div class="article-thumbnail">
+                                                  
                                                     <a
-                                                        href="/article/29279-mundiali-2022-romel-kalatashi-mokhvda-sakartvelos-nakrebi"><img
-                                                            src="https://static.popsport.com/sites/default/files/styles/teaser_sm/public/2020-11/GEO%20EST%202_0.png?itok=oeUxgmk3"
-                                                            width="95" height="78" alt="Thumbnail"
-                                                            typeof="foaf:Image" />
+                                                    href="{{route('adminshow',["id"=>$data->id])}}">
+                                                        <img src="{{asset("storage/$data->image")}}"  width="95" height="78" alt="Thumbnail"/>
+                    
+                                                    
                                                     </a>
-
                                                     <div class="at-cover">
-
+                    
                                                     </div>
                                                 </div>
-
+                    
                                                 <div class="ats-info d-flex flex-column justify-content-center">
-                                                    <time class="om-date" datetime="2020-11-19T02:47:57+0400">19 ნოე
-                                                        2020 / 02:47</time>
-                                                    <a href="/article/29279-mundiali-2022-romel-kalatashi-mokhvda-sakartvelos-nakrebi"
-                                                        class="article-link">
-                                                        <span>მუნდიალი 2022 | რომელ კალათაში მოხვდა საქართველოს
-                                                            ნაკრები </span>
-
+                                                    <time class="om-date" datetime="2020-11-27T23:50:00+0400" title="27 ნოე 2020 / 23:50"
+                                                        style="visibility: visible;">{{$data->created_at}}</time>
+                                                   
+                                                    <a  href="{{route('adminshow',["id"=>$data->id])}}"
+                                                        class="article-link" style="   
+                                                        overflow: hidden;
+                                                        display: -webkit-box;
+                                                        -webkit-line-clamp: 1;
+                                                        -webkit-box-orient: vertical;">
+                                                        {{$data->description}}
                                                     </a>
                                                 </div>
                                             </article>
                                         </div>
-                                        <div class="views-row">
-                                            <article class="e-article-teaser-sm d-flex" data-nid="29305"
-                                                data-url="https://popsport.com/article/29305-khuti-tsvlileba-dziritadshi-borjghalosnebis-shemadgenloba-uelstan">
-                                                <div class="article-thumbnail">
-                                                    <a
-                                                        href="/article/29305-khuti-tsvlileba-dziritadshi-borjghalosnebis-shemadgenloba-uelstan"><img
-                                                            src="https://static.popsport.com/sites/default/files/styles/teaser_sm/public/2020-11/125824027_3485421784888229_8480210567681499195_o.jpg?itok=Z2y1md4K"
-                                                            width="95" height="78" alt="Thumbnail"
-                                                            typeof="foaf:Image" />
-                                                    </a>
+                                        @endforeach 
+                    
 
-                                                    <div class="at-cover">
+                                        {{-- @include('posts.relatedNews') --}}
 
-                                                    </div>
-                                                </div>
-
-                                                <div class="ats-info d-flex flex-column justify-content-center">
-                                                    <time class="om-date" datetime="2020-11-19T21:14:16+0400">19 ნოე
-                                                        2020 / 21:14</time>
-                                                    <a href="/article/29305-khuti-tsvlileba-dziritadshi-borjghalosnebis-shemadgenloba-uelstan"
-                                                        class="article-link">
-                                                        <span>ხუთი ცვლილება ძირითადში - ბორჯღალოსნების შემადგენლობა
-                                                            უელსთან</span>
-
-                                                    </a>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="views-row">
-                                            <article class="e-article-teaser-sm d-flex" data-nid="29142"
-                                                data-url="https://popsport.com/article/29142-shota-arveladze-sakartvelos-nakrebis-gacvrtnas-premieroba-mirchevnia">
-                                                <div class="article-thumbnail">
-                                                    <a
-                                                        href="/article/29142-shota-arveladze-sakartvelos-nakrebis-gacvrtnas-premieroba-mirchevnia"><img
-                                                            src="https://static.popsport.com/sites/default/files/styles/teaser_sm/public/2020-05/1590069323-%E1%83%90%E1%83%A0%E1%83%95%E1%83%94%E1%83%9A%E1%83%90%E1%83%AB%E1%83%94.jpg?itok=uN081cDP"
-                                                            width="95" height="78" alt="Thumbnail"
-                                                            typeof="foaf:Image" />
-                                                    </a>
-
-                                                    <div class="at-cover">
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="ats-info d-flex flex-column justify-content-center">
-                                                    <time class="om-date" datetime="2020-11-14T11:08:34+0400">14 ნოე
-                                                        2020 / 11:08</time>
-                                                    <a href="/article/29142-shota-arveladze-sakartvelos-nakrebis-gacvrtnas-premieroba-mirchevnia"
-                                                        class="article-link">
-                                                        <span>შოთა არველაძე: საქართველოს ნაკრების გაწვრთნას
-                                                            პრემიერობა მირჩევნია</span>
-
-                                                    </a>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="views-row">
-                                            <article class="e-article-teaser-sm d-flex" data-nid="29308"
-                                                data-url="https://popsport.com/article/29308-out-klei-tompsoni-momaval-sezonsats-gamotovebs">
-                                                <div class="article-thumbnail">
-                                                    <a
-                                                        href="/article/29308-out-klei-tompsoni-momaval-sezonsats-gamotovebs"><img
-                                                            src="https://static.popsport.com/sites/default/files/styles/teaser_sm/public/2020-11/KLEY.jpg?itok=lR0LZGhG"
-                                                            width="95" height="78" alt="Thumbnail"
-                                                            typeof="foaf:Image" />
-                                                    </a>
-
-                                                    <div class="at-cover">
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="ats-info d-flex flex-column justify-content-center">
-                                                    <time class="om-date" datetime="2020-11-19T23:05:34+0400">19 ნოე
-                                                        2020 / 23:05</time>
-                                                    <a href="/article/29308-out-klei-tompsoni-momaval-sezonsats-gamotovebs"
-                                                        class="article-link">
-                                                        <span>OUT! - კლეი ტომპსონი მომავალ სეზონსაც
-                                                            გამოტოვებს</span>
-
-                                                    </a>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="views-row">
-                                            <article class="e-article-teaser-sm d-flex" data-nid="29288"
-                                                data-url="https://popsport.com/article/29288-margvelashvilma-rusi-iponze-dastsa-carmatebuli-starti-evropis-chempionatze">
-                                                <div class="article-thumbnail">
-                                                    <a
-                                                        href="/article/29288-margvelashvilma-rusi-iponze-dastsa-carmatebuli-starti-evropis-chempionatze"><img
-                                                            src="https://static.popsport.com/sites/default/files/styles/teaser_sm/public/2020-11/judo.jpg?itok=Eghp7JVr"
-                                                            width="95" height="78" alt="Thumbnail"
-                                                            typeof="foaf:Image" />
-                                                    </a>
-
-                                                    <div class="at-cover">
-
-                                                        <span class="at-video"><svg role="image"
-                                                                class="icon-play-circled at-video-icon">
-                                                                <use
-                                                                    xlink:href="/themes/custom/omedia/images/icons.svg?qk24s1#icon-play-circled">
-                                                                </use>
-                                                            </svg></span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="ats-info d-flex flex-column justify-content-center">
-                                                    <time class="om-date" datetime="2020-11-19T14:15:00+0400">19 ნოე
-                                                        2020 / 14:15</time>
-                                                    <a href="/article/29288-margvelashvilma-rusi-iponze-dastsa-carmatebuli-starti-evropis-chempionatze"
-                                                        class="article-link">
-                                                        <span>მარგველაშვილმა რუსი იპონზე დასცა - წარმატებული სტარტი
-                                                            ევროპის ჩემპიონატზე</span>
-
-                                                    </a>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="views-row">
-                                            <article class="e-article-teaser-sm d-flex" data-nid="29286"
-                                                data-url="https://popsport.com/article/29286-bichebo-sirtskhvilia-tavs-mikhedet-ra-tskhadadze-grigalavas-da-kverkvelias">
-                                                <div class="article-thumbnail">
-                                                    <a
-                                                        href="/article/29286-bichebo-sirtskhvilia-tavs-mikhedet-ra-tskhadadze-grigalavas-da-kverkvelias"><img
-                                                            src="https://static.popsport.com/sites/default/files/styles/teaser_sm/public/2020-11/grigalava%20cxadadze%20popsport%20cover.png?itok=jShvh7bi"
-                                                            width="95" height="78" alt="Thumbnail"
-                                                            typeof="foaf:Image" />
-                                                    </a>
-
-                                                    <div class="at-cover">
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="ats-info d-flex flex-column justify-content-center">
-                                                    <time class="om-date" datetime="2020-11-19T13:40:50+0400">19 ნოე
-                                                        2020 / 13:40</time>
-                                                    <a href="/article/29286-bichebo-sirtskhvilia-tavs-mikhedet-ra-tskhadadze-grigalavas-da-kverkvelias"
-                                                        class="article-link">
-                                                        <span>&#039;ბიჭებო, სირცხვილია! თავს მიხედეთ, რა&#039; -
-                                                            ცხადაძე გრიგალავას და კვერკველიას</span>
-
-                                                    </a>
-                                                </div>
-                                            </article>
-                                        </div>
 
 
 
@@ -1313,18 +1209,17 @@
                         <div class="container">
                             <div class="of-social text-center text-lg-left float-lg-left">
                                 <span class="age-limit">12</span>
-                                <a href="https://www.facebook.com/popsportcom/" target="_blank" class="boxed-icon"><svg
+                                {{-- <a href="https://www.facebook.com/popsportcom/" target="_blank" class="boxed-icon"><svg
                                         role="image" class="icon-facebook-f bi-icon">
                                         <use xlink:href="/themes/custom/omedia/images/icons.svg?qk24s1#icon-facebook-f">
                                         </use>
                                     </svg></a>
-                                <!-- <a href="#" class="boxed-icon"><svg role="image" class="icon-twitter bi-icon"><use xlink:href="/themes/custom/omedia/images/icons.svg?qk24s1#icon-twitter"></use></svg></a> -->
                                 <a href="https://www.youtube.com/user/europebet" target="_blank" class="boxed-icon"><svg
                                         role="image" class="icon-youtube-play bi-icon">
                                         <use
                                             xlink:href="/themes/custom/omedia/images/icons.svg?qk24s1#icon-youtube-play">
                                         </use>
-                                    </svg></a>
+                                    </svg></a> --}}
                             </div>
                             <nav class="of-menu float-right d-none d-lg-block">
                                 <a href="/">მთავარი</a>
@@ -1340,12 +1235,7 @@
                     <div class="of-middle">
                         <div class="container">
                             <div class="row justify-content-center justify-content-lg-end">
-                                <div class="col-auto of-topge">
-                                    <!-- TOP.GE ASYNC COUNTER CODE -->
-                                    <div id="top-ge-counter-container" data-site-id="110680"></div>
-                                    <script async src="//counter.top.ge/counter.js"></script>
-                                    <!-- / END OF TOP.GE COUNTER CODE -->
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -1353,8 +1243,10 @@
                         <div class="container">
                             <div class="of-brand float-lg-left">
                                 <div class="of-logo-wrap float-lg-left">
-                                    <a href="/" target="_blank"><img class="of-logo"
-                                            src="/themes/custom/omedia/images/logo-popsport-new.svg" alt="popsport"></a>
+                                    <a href="/" target="_blank">
+                                        <img class="of-logo"
+                                            src="logo-popsport-new.svg" alt="popsport">
+                                        </a>
                                 </div>
                                 <div class="of-text-wrap float-lg-left">
                                     <p>Copyright &copy; 2020 popsport &mdash; ყველა უფლება დაცულია</p>
@@ -1374,8 +1266,8 @@
 
         </div>
 
-
-
+   
+{{--    
 
         <script type="application/json" data-drupal-selector="drupal-settings-json">
             {
@@ -1419,10 +1311,18 @@
                               "permissionsHash": "fe6e4dfe12773b5e6b64f095b207e77573c421e3ed02dcb3080b17ca636f8196"
                           }
                       }
-        </script>
-        <script src="/sites/default/files/js/js_pr_MgNAETz2Lus6JlZeqxhQ4chxP-yKKJkII2BghVvM.js"></script>
+        </script> --}}
+        {{-- <script src="/sites/default/files/js/js_pr_MgNAETz2Lus6JlZeqxhQ4chxP-yKKJkII2BghVvM.js"></script> --}}
 
     </div>
 </div>
-
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/toggle.js"></script>
 @endsection
