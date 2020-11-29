@@ -21,6 +21,7 @@ $(document).ready(function () {
     dailyBtn.classList.remove('active')
     weeklyBtn.classList.add('active')
   });
+  
   dailyBtn.addEventListener("click", function () {
     for (i = 0; i < weekly.length; ++i) {
       if(weekly[i].style.display === "block"){
