@@ -39,6 +39,16 @@
             <label>Stuff about you :</label>
             <textarea required name="description" id="" cols="10" rows="10"  class="form-control" placeholder="desc"></textarea>
             
+
+ 
+            <select name="category_id" id="category_id" class="form-control">
+                <option value=""></option>
+                @foreach ($categories as $id=>$category)
+            <option value="{{$id}}">{{$category}}</option>
+
+                @endforeach
+            </select>
+
             <label>Choose image</label>
             <input type="file" name="image" required class="py-2"/>
             <button class="btn brn-primary">submit</button>

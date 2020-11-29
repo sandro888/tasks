@@ -33,6 +33,7 @@ Route::post('/admin/destroy','PostsController@destroy')->name('admindelete')->mi
 
 Route::get('/admin','PostsController@dashboard')->name('admindashboard')->middleware(['auth','auth.admin']);;
 Route::post('/admin/store/comments','PostsController@storecomment')->name('storecomment');
+Route::get('/category/{id}','PostsController@showCat');
 
 
 Route::post('/admin/update','PostsController@update')->name('adminupdate')->middleware(['auth','auth.admin']);;

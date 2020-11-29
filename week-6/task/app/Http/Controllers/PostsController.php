@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Posts;
 use App\Comments;
 use Carbon\Carbon;
+use App\Categories;
 class PostsController extends Controller
 {
     /**
@@ -38,7 +39,9 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view("posts.create");
+        $categories=Categories::pluck('name','id');
+
+        return view("posts.create",compact('categories'));
 
     }
 
@@ -62,7 +65,9 @@ class PostsController extends Controller
         Posts::create([
             "title"=>$request->input("title"),
             "description"=>$request->input("description"),
+            "category_id"=>$request->input("category_id"),
             "image"=>$request->file("image")->store('postedpics'),
+
             
             ]);
             return redirect("/");
@@ -136,5 +141,12 @@ class PostsController extends Controller
     		"comments"=>$request->input("comments"),
         ]);
         return redirect()->back();
+    }
+
+    public function showCat($id)
+    {
+        $category_posts=Posts::where('category_id',$id)->get();
+        $categoryId=$id;
+        return view('posts.category_list',compact('category_posts','categoryId'));
     }
 }

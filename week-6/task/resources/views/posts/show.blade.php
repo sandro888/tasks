@@ -17,22 +17,7 @@
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
-                                    {{-- <div>
-
-
-                        <nav class="head-top-topics">
-                            <span class="htt-label">პოპულარული:</span>
-                            <a href="/topic/kartuli-sporti" class="e-topic-boxed-link"> ქართული
-                                სპორტი
-                            </a><a href="/topic/football" class="e-topic-boxed-link"> ფეხბურთი
-                            </a><a href="/topic/georgian-football" class="e-topic-boxed-link">
-                                ქართული ფეხბურთი
-                            </a><a href="/topic/erta-liga" class="e-topic-boxed-link"> ერთა ლიგა
-                            </a>
-                        </nav>
-
-                    </div> --}}
-
+                                
 
                                 </div>
                                 <div class="col-lg-6">
@@ -62,13 +47,12 @@
                                         <div class="col-auto">
 
 
-                                            <ul class="navbar-nav ml-auto d-flex"
-                                                style="    display: -webkit-inline-box !important;">
-
+                                            <ul class="navbar-nav ml-auto d-flex" style="    display: -webkit-inline-box !important;">
+ 
 
                                                 @guest
                                                 <li class="nav-item" style="    margin-right: 20px;">
-                                                    <a class="nav-link"
+                                                    <a class="nav-link" 
                                                         href="{{ route('login') }}">{{ __('შესვლა') }}</a>
                                                 </li>
                                                 @if (Route::has('register'))
@@ -89,7 +73,7 @@
                                                         aria-labelledby="navbarDropdown">
                                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                                             onclick="event.preventDefault();
-                                                                             document.getElementById('logout-form').submit();">
+                                                                                             document.getElementById('logout-form').submit();">
                                                             {{ __('Logout') }}
                                                         </a>
 
@@ -152,534 +136,21 @@
 
 
                                         <nav class="main-menu clearfix">
+                                            
                                             <ul class="submenu submenu-level-0 list-unstyled">
-
+                                                <?php $cat=DB::table('categories')->get();?>
+                                                @foreach ($cat as $item)
                                                 <li
-                                                    class="menu-item item-level-0 item--expanded menu-path-topic-football">
-                                                    <a href="/topic/football" class="link-level-0"
-                                                        data-drupal-link-system-path="taxonomy/term/12">ფეხბურთი</a>
-                                                    <ul class="submenu submenu-level-1 list-unstyled">
-                                                        <li
-                                                            class="menu-item item-level-1 item--expanded menu-path-topic-georgian-football">
-                                                            <a href="/topic/georgian-football" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/13">ქართული
-                                                                ფეხბურთი</a>
-                                                            <ul class="submenu submenu-level-2 list-unstyled">
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-erovnuli-liga">
-                                                                    <a href="/topic/erovnuli-liga" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/14">ეროვნული
-                                                                        ლიგა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-cup-georgia">
-                                                                    <a href="/topic/cup-georgia"
-                                                                        class="link-level-2">საქართველოს
-                                                                        თასი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-national-teams">
-                                                                    <a href="/topic/national-teams" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/17">ეროვნული
-                                                                        ნაკრები</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-football-asakobrivi-nakrebebi">
-                                                                    <a href="/topic/football-asakobrivi-nakrebebi"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/298">ასაკობრივი
-                                                                        ნაკრებები</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-legioners">
-                                                                    <a href="/topic/legioners" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/18">ლეგიონერები</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-futsal">
-                                                                    <a href="/topic/futsal" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/19">ფუტსალი</a>
-                                                                </li>
-                                                            </ul>
+                                                class="menu-item item-level-0 item--expanded menu-path-topic-football">
+                                            
+                                                    <a  class="link-level-0" href="{{url('category',$item->id)}}">{{$item->name}}</a>
 
-                                                        </li>
-                                                        <li
-                                                            class="menu-item item-level-1 item--expanded menu-path-topic-world-football">
-                                                            <a href="/topic/world-football" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/20">მსოფლიო
-                                                                ფეხბურთი</a>
-                                                            <ul class="submenu submenu-level-2 list-unstyled">
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-champions-league">
-                                                                    <a href="/topic/champions-league"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/21">ჩემპიონთა
-                                                                        ლიგა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-europa-league">
-                                                                    <a href="/topic/europa-league" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/22">ევროპალიგა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-england">
-                                                                    <a href="/topic/england" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/23">ინგლისი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-spain">
-                                                                    <a href="/topic/spain" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/24">ესპანეთი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-germany">
-                                                                    <a href="/topic/germany" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/25">გერმანია</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-italy">
-                                                                    <a href="/topic/italy" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/26">იტალია</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-france">
-                                                                    <a href="/topic/france" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/27">საფრანგეთი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-netherlands">
-                                                                    <a href="/topic/netherlands" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/28">ჰოლანდია</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-erta-liga">
-                                                                    <a href="/topic/erta-liga" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/123">ერთა
-                                                                        ლიგა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-world-cup">
-                                                                    <a href="/topic/world-cup" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/29">მსოფლიოს
-                                                                        ჩემპიონატი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-european-championship">
-                                                                    <a href="/topic/european-championship"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/30">ევროპის
-                                                                        ჩემპიონატი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-coppa-america">
-                                                                    <a href="/topic/coppa-america" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/31">კოპა
-                                                                        ამერიკა</a>
-                                                                </li>
-                                                            </ul>
 
-                                                        </li>
-                                                    </ul>
+                                            </li>
+                
+                                                @endforeach
+                                             
 
-                                                </li>
-                                                <li
-                                                    class="menu-item item-level-0 item--expanded menu-path-topic-basketball">
-                                                    <a href="/topic/basketball" class="link-level-0"
-                                                        data-drupal-link-system-path="taxonomy/term/32">კალათბურთი</a>
-                                                    <ul class="submenu submenu-level-1 list-unstyled">
-                                                        <li
-                                                            class="menu-item item-level-1 item--expanded menu-path-topic-georgian-basketball">
-                                                            <a href="/topic/georgian-basketball" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/33">ქართული
-                                                                კალათბურთი</a>
-                                                            <ul class="submenu submenu-level-2 list-unstyled">
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-superleague">
-                                                                    <a href="/topic/superleague" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/35">სუპერლიგა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-georgian-cup">
-                                                                    <a href="/topic/georgian-cup" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/36">საქართველოს
-                                                                        თასი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-national-team">
-                                                                    <a href="/topic/national-team" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/37">ეროვნული
-                                                                        ნაკრები</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-asakobrivi-nakrebebi">
-                                                                    <a href="/topic/asakobrivi-nakrebebi"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/38">ასაკობრივი
-                                                                        ნაკრებები</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-legioners-0">
-                                                                    <a href="/topic/legioners-0" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/39">ლეგიონერები</a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </li>
-                                                        <li
-                                                            class="menu-item item-level-1 item--expanded menu-path-topic-world-basketball">
-                                                            <a href="/topic/world-basketball" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/34">მსოფლიო
-                                                                კალათბურთი</a>
-                                                            <ul class="submenu submenu-level-2 list-unstyled">
-                                                                <li class="menu-item item-level-2 menu-path-topic-nba">
-                                                                    <a href="/topic/nba" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/40">NBA</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-euroleague">
-                                                                    <a href="/topic/euroleague" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/41">ევროლიგა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-eurobasket">
-                                                                    <a href="/topic/eurobasket" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/42">ევრობასკეტი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-basketball-world-championship">
-                                                                    <a href="/topic/basketball-world-championship"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/43">მსოფლიოს
-                                                                        ჩემპიონატი</a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </li>
-                                                    </ul>
-
-                                                </li>
-                                                <li class="menu-item item-level-0 item--expanded menu-path-topic-rugby">
-                                                    <a href="/topic/rugby" class="link-level-0"
-                                                        data-drupal-link-system-path="taxonomy/term/44">რაგბი</a>
-                                                    <ul class="submenu submenu-level-1 list-unstyled">
-                                                        <li
-                                                            class="menu-item item-level-1 item--expanded menu-path-topic-georgian-rugby">
-                                                            <a href="/topic/georgian-rugby" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/45">ქართული
-                                                                რაგბი</a>
-                                                            <ul class="submenu submenu-level-2 list-unstyled">
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-rugby-georgian-championship">
-                                                                    <a href="/topic/rugby-georgian-championship"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/47">დიდი
-                                                                        ათი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-rugby-georgian-cup">
-                                                                    <a href="/topic/rugby-georgian-cup"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/48">საქართველოს
-                                                                        თასი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-rugby-national-team">
-                                                                    <a href="/topic/rugby-national-team"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/49">ეროვნული
-                                                                        ნაკრები</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-rugby-asakobrivi-nakrebi">
-                                                                    <a href="/topic/rugby-asakobrivi-nakrebi"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/50">ასაკობრივი
-                                                                        ნაკრებები</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-rugby-legioners">
-                                                                    <a href="/topic/rugby-legioners"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/51">ლეგიონერები</a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </li>
-                                                        <li
-                                                            class="menu-item item-level-1 item--expanded menu-path-topic-world-rugby">
-                                                            <a href="/topic/world-rugby" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/46">მსოფლიო
-                                                                რაგბი</a>
-                                                            <ul class="submenu submenu-level-2 list-unstyled">
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-nations-cup">
-                                                                    <a href="/topic/nations-cup" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/52">ერთა
-                                                                        თასი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-6-nations">
-                                                                    <a href="/topic/6-nations" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/53">6
-                                                                        ერი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-4-nations">
-                                                                    <a href="/topic/4-nations" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/54">4
-                                                                        ერი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-rugby-sevens">
-                                                                    <a href="/topic/rugby-sevens" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/56">7-კაცა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-super-14">
-                                                                    <a href="/topic/super-14" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/55">სუპერ
-                                                                        რაგბი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-rugby-tests">
-                                                                    <a href="/topic/rugby-tests" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/57">ტესტები</a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </li>
-                                                    </ul>
-
-                                                </li>
-                                                <li
-                                                    class="menu-item item-level-0 item--expanded menu-path-topic-other-sports">
-                                                    <a href="/topic/other-sports" class="link-level-0"
-                                                        data-drupal-link-system-path="taxonomy/term/72">მეტი</a>
-                                                    <ul class="submenu submenu-level-1 list-unstyled">
-                                                        <li
-                                                            class="menu-item item-level-1 item--expanded menu-path-topic-tennis">
-                                                            <a href="/topic/tennis" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/58">ჩოგბურთი</a>
-                                                            <ul class="submenu submenu-level-2 list-unstyled">
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-georgian-tennis">
-                                                                    <a href="/topic/georgian-tennis"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/59">ქართული
-                                                                        ჩოგბურთი</a>
-                                                                </li>
-                                                                <li class="menu-item item-level-2 menu-path-topic-atp">
-                                                                    <a href="/topic/atp" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/60">ATP</a>
-                                                                </li>
-                                                                <li class="menu-item item-level-2 menu-path-topic-wta">
-                                                                    <a href="/topic/wta" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/61">WTA</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-masters">
-                                                                    <a href="/topic/masters" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/62">მასტერსი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-big-slam">
-                                                                    <a href="/topic/big-slam" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/63">დიდი
-                                                                        სლემი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-davis-cup">
-                                                                    <a href="/topic/davis-cup" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/64">დევისის
-                                                                        თასი</a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </li>
-                                                        <li
-                                                            class="menu-item item-level-1 item--expanded menu-path-topic-wrestling">
-                                                            <a href="/topic/wrestling" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/65">ჭიდაობა</a>
-                                                            <ul class="submenu submenu-level-2 list-unstyled">
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-classic-wrestling">
-                                                                    <a href="/topic/classic-wrestling"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/67">კლასიკური
-                                                                        ჭიდაობა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-freestyle-wrestling">
-                                                                    <a href="/topic/freestyle-wrestling"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/68">თავისუფალი
-                                                                        ჭიდაობა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-georgian-wrestling">
-                                                                    <a href="/topic/georgian-wrestling"
-                                                                        class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/69">ქართული
-                                                                        ჭიდაობა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-sambo">
-                                                                    <a href="/topic/sambo" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/70">სამბო</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-summo">
-                                                                    <a href="/topic/summo" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/71">სუმო</a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </li>
-                                                        <li
-                                                            class="menu-item item-level-1 item--expanded menu-path-topic-other-sports">
-                                                            <a href="/topic/other-sports" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/72">სხვა
-                                                                სახეობები</a>
-                                                            <ul class="submenu submenu-level-2 list-unstyled">
-                                                                <li class="menu-item item-level-2 menu-path-topic-judo">
-                                                                    <a href="/topic/judo" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/66">ძიუდო</a>
-                                                                </li>
-                                                                <li class="menu-item item-level-2 menu-path-topic-mma">
-                                                                    <a href="/topic/mma" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/1261">MMA</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-formula-1">
-                                                                    <a href="/topic/formula-1" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/73">ფორმულა
-                                                                        1</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-chess">
-                                                                    <a href="/topic/chess" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/75">ჭადრაკი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-hockey">
-                                                                    <a href="/topic/hockey" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/76">ჰოკეი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-boxing">
-                                                                    <a href="/topic/boxing" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/77">კრივი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-cycling">
-                                                                    <a href="/topic/cycling" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/78">ველოსპორტი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-dzalosnoba">
-                                                                    <a href="/topic/dzalosnoba" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/351">ძალოსნობა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-handball">
-                                                                    <a href="/topic/handball" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/79">ხელბურთი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-volleyball">
-                                                                    <a href="/topic/volleyball" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/80">ფრენბურთი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-water-polo">
-                                                                    <a href="/topic/water-polo" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/81">წყალბურთი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-figure-skating">
-                                                                    <a href="/topic/figure-skating" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/82">ფიგურული
-                                                                        სრიალი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-athletics">
-                                                                    <a href="/topic/athletics" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/83">მძლეოსნობა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-shooting">
-                                                                    <a href="/topic/shooting" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/84">ტყვიის
-                                                                        სროლა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-karate">
-                                                                    <a href="/topic/karate" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/85">კარატე</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-fencing">
-                                                                    <a href="/topic/fencing" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/86">ფარიკაობა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-extreme-sports">
-                                                                    <a href="/topic/extreme-sports" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/87">ექსტრემალური
-                                                                        სპორტი</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-archery">
-                                                                    <a href="/topic/archery" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/88">მშვილდოსნობა</a>
-                                                                </li>
-                                                                <li
-                                                                    class="menu-item item-level-2 menu-path-topic-winter-sports">
-                                                                    <a href="/topic/winter-sports" class="link-level-2"
-                                                                        data-drupal-link-system-path="taxonomy/term/89">ზამთრის
-                                                                        სახეობები</a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </li>
-                                                    </ul>
-
-                                                </li>
-                                                <li
-                                                    class="menu-item item-level-0 item--collapsed menu-path-topic-gaming">
-                                                    <a href="/topic/gaming" class="link-level-0"
-                                                        data-drupal-link-system-path="taxonomy/term/2988">Gaming</a>
-                                                </li>
-                                                <li class="menu-item item-level-0 item--expanded menu-path-popcorn">
-                                                    <a href="/popcorn" class="link-level-0"
-                                                        data-drupal-link-system-path="taxonomy/term/2336">POPCORN</a>
-                                                    <ul class="submenu submenu-level-1 list-unstyled">
-                                                        <li
-                                                            class="menu-item item-level-1 menu-path-popcorn-pop-analysis">
-                                                            <a href="/popcorn/pop-analysis" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/2340">ანალიტიკა</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item item-level-1 menu-path-popcorn-pop-history">
-                                                            <a href="/popcorn/pop-history" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/2341">ისტორია</a>
-                                                        </li>
-                                                        <li
-                                                            class="menu-item item-level-1 menu-path-popcorn-pop-interview">
-                                                            <a href="/popcorn/pop-interview" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/2342">ინტერვიუ</a>
-                                                        </li>
-                                                        <li class="menu-item item-level-1 menu-path-popcorn-pop-fun">
-                                                            <a href="/popcorn/pop-fun" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/3057">ქვიზი</a>
-                                                        </li>
-                                                        <li class="menu-item item-level-1 menu-path-popcorn-pop-blog">
-                                                            <a href="/popcorn/pop-blog" class="link-level-1"
-                                                                data-drupal-link-system-path="taxonomy/term/3058">ბლოგი</a>
-                                                        </li>
-                                                    </ul>
-
-                                                </li>
                                             </ul>
 
                                         </nav>
@@ -707,6 +178,7 @@
                         </div>
                     </div>
                 </header>
+
                 <div class="container">
 
                     <div class="row">
@@ -809,51 +281,7 @@
 
 
 
-                                    {{-- <header>
-                        <div class="eb-block-title om-color-feed">
-                            <h2 class="ebt-title"><span class="ebt-inner">გირჩევთ ნახოთ</span></h2>
-                        </div>
-                    </header>
-                    @include('posts.relatedNews') --}}
-
-                                    {{-- 
-                    @foreach ($posts as $data)
-                    <div class="views-row">
-                        <article class="e-article-teaser-sm d-flex" data-nid="29625"
-                            data-url="https://popsport.com/article/29625-preview-sakartvelos-udzlieresi-trio-hqavs-pinets-liderebi-aklia">
-                            <div class="article-thumbnail">
-                              
-                                <a
-                                href="{{route('adminshow',["id"=>$data->id])}}">
-                                    <img src="{{asset("storage/$data->image")}}" width="95" height="78"
-                                        alt="Thumbnail" />
-
-
-                                    </a>
-                                    <div class="at-cover">
-
-                                    </div>
-                                </div>
-
-                                <div class="ats-info d-flex flex-column justify-content-center">
-                                    <time class="om-date" datetime="2020-11-27T23:50:00+0400"
-                                        title="27 ნოე 2020 / 23:50"
-                                        style="visibility: visible;">{{$data->created_at}}</time>
-
-                                    <a href="{{route('adminshow',["id"=>$data->id])}}" class="article-link" style="   
-                                    overflow: hidden;
-                                    display: -webkit-box;
-                                    -webkit-line-clamp: 1;
-                                    -webkit-box-orient: vertical;">
-                                        {{$data->description}}
-                                    </a>
-                                </div>
-                                </article>
-                            </div>
-
-
-                            @endforeach --}}
-
+                               
 
 
 

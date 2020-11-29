@@ -35,14 +35,14 @@
             @csrf
         <input class="form-control" type="hidden" name="id" value="{{$posts->id}}">
             <label>Title:</label>
-            <input required type="text" name="title" placeholder="title" class="form-control"  value="{{$posts->title}}"/>
+            <input  type="text" name="title" placeholder="title" class="form-control"  value="{{$posts->title}}"/>
           
             <label>Stuff about you :</label>
-        <textarea required name="description" id="" cols="10" rows="10"  class="form-control" placeholder="desc">{{ $posts->description}}</textarea>
+        <textarea  name="description" id="" cols="10" rows="10"  class="form-control" placeholder="desc">{{ $posts->description}}</textarea>
         <img src="{{asset("storage/$posts->image")}}" width="303" height="195" alt="" alt="">
         <br/>
         <label>Choose image</label>
-        <input type="file" name="image" required class="py-2"/>
+        <input required type="file" name="image" value="" class="py-2"/>
             <button class="btn brn-primary">submit</button>
         </form>
     </div>
