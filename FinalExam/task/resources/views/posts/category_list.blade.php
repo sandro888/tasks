@@ -87,7 +87,7 @@
                                 </a>
 
                                 <div class="at-cover">
-                                    <a href="/topic/rugby" class="e-topic-boxed-link">
+                                    <a href="" class="e-topic-boxed-link">
                                         <?php $category_n = DB::table('categories')
                                         ->select('name')
                                         ->where('id', $categoryId)

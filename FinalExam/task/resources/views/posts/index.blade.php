@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+    <div class="container">
         <h1>Products</h1>
         <div class="row justify-content-center">
             <div class="col-md-6" style="margin-top: 20px">
@@ -20,9 +20,8 @@
 
                         </div>
                     </div>
-                    @endforeach
+                @endforeach
             </div>
         </div>
     </div>
 @endsection
-
